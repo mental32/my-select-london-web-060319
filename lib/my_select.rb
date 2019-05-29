@@ -7,7 +7,9 @@ def my_select(s)
     limit = s.size
 
     while step != limit do
-      seq << yield(s[step])
+      if yield(s[step])
+        seq << s[step]
+      end
       step += 1
     end
   end
